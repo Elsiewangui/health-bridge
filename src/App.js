@@ -1,23 +1,22 @@
-
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route , useLocation} from 'react-router-dom';
 import Home from './Home';
 import AddProgram from './AddProgram';
 import AddClient from './AddClient';
 import AllClients from './AllClients';
+import ClientProfile from './ClientProfile';
+import EditClient from './EditClient';
+import NavBar from './NavBar'; 
 
 function App() {
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="App">
-      <h1>Health Bridge</h1>
-
-      {/* Navigation */}
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/programs">Add Program</Link> |{" "}
-        <Link to="/clients/new">Register Client</Link> |{" "}
-        <Link to="/clients">All Clients</Link>
-      </nav>
+      {/* Only show Navbar if NOT on homepage */}
+      {!isHomePage && <NavBar />}
 
       {/* Routes */}
       <Routes>
@@ -25,6 +24,8 @@ function App() {
         <Route path="/programs" element={<AddProgram />} />
         <Route path="/clients/new" element={<AddClient />} />
         <Route path="/clients" element={<AllClients />} />
+        <Route path="/client/:id" element={<ClientProfile />} />
+        <Route path="/clients/:id/edit" element={<EditClient />} />
       </Routes>
     </div>
   );

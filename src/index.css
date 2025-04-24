@@ -21,3 +21,394 @@
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  /*Home.css*/
+
+/*Container for the homepage*/
+.home-container {
+  padding: 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  color: white;
+  height: 100vh; /*Full viewport height*/
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Slideshow*/
+@keyframes slideShow {
+  0% {
+    background-image: url('https://www.shutterstock.com/image-photo/closeup-patients-arm-iv-drip-260nw-2476792285.jpg');
+  }
+  25% {
+    background-image: url('https://media.istockphoto.com/id/1496720417/photo/high-five-for-being-such-a-brave-little-boy.jpg?s=612x612&w=0&k=20&c=jrhbbPCEEN5Z3nSmTdu6fBC84v0kFuuJ8L4l2reghn4=');
+  }
+  50% {
+    background-image: url('https://media.istockphoto.com/id/1766603296/photo/black-woman-patient-and-doctor-with-smile-consultation-and-heart-emoji-for-cardio-health.jpg?s=612x612&w=0&k=20&c=gu5qc-Ey5lD3RBJHuNaftFaybd738W9BQYz3MOSJJUQ=');
+  }
+  75% {
+    background-image: url('https://media.istockphoto.com/id/1739325597/photo/nurse-senior-woman-and-smile-with-comfort-holding-hands-or-support-in-nursing-home-for.jpg?s=612x612&w=0&k=20&c=BMCKzCUYgUGPlSugqpmKVJ3tNzeh0Sv_HjYcKOrKuKI=');
+  }
+  100% {
+    background-image: url('https://img.freepik.com/free-photo/little-girl-doctors-office_329181-9288.jpg');
+  }
+}
+
+.home-container {
+  animation: slideShow 20s infinite; /*Duration of 20 seconds for each cycle*/
+  background-size: cover;
+  background-position: center;
+  transition: background-image 2s ease-in-out;
+  position: relative;
+  padding: 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white; /*makes text white for contrast*/
+  z-index: 1;
+}
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /*dark overlay*/
+  z-index: -1;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /*Adds shadow for better visibility*/
+}
+
+.home-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-features li {
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.home-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.home-button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #2980b9;
+}
+/*Navbar.css*/
+
+.navbar {
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.nav-separator {
+  color: white;
+}
+/*Add Client.css*/
+.register-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container input[type="text"],
+.register-container input[type="date"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.register-container h4 {
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+.register-container div > label,
+.register-container div > input[type="checkbox"] {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.program-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.register-container button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: #2980b9;
+}
+/*Add Program.js*/
+.add-program-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.add-program-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.add-program-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-program-container label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-program-container input[type="text"] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-program-container button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-program-container button:hover {
+  background-color: #2980b9;
+}
+/*All Clients.js*/
+.all-clients-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.all-clients-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.all-clients-container input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.all-clients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.all-clients-list li {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.all-clients-list li a {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.all-clients-list li a:hover {
+  text-decoration: underline;
+}
+/*ClientProfile.js*/
+.client-profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.client-profile-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.client-profile-container p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.client-profile-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.client-profile-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-profile-buttons .edit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.client-profile-buttons .edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.client-profile-buttons .delete-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.client-profile-buttons .delete-btn:hover {
+  background-color: #c0392b;
+}
+/*EditClient.js*/
+.edit-client-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.edit-client-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.edit-client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-client-form input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.edit-client-form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.edit-client-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-client-form button:hover {
+  background-color: #1e8449;
+}

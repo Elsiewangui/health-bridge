@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";//root component of the application.
+import App from "./App"; // root component of the application
 import "./index.css"; 
+import { ClientProvider } from "./context/ClientContext"; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+    <ClientProvider>
+      <App />
+    </ClientProvider>
   </BrowserRouter>
 );

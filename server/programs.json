@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "TB",
+    "description": "Tuberculosis Program"
+  },
+  {
+    "id": 2,
+    "name": "HIV",
+    "description": "HIV/AIDS Program"
+  },
+  {
+    "id": 3,
+    "name": "Malaria",
+    "description": "Malaria Prevention and Treatment Program"
+  },
+  {
+    "id": 4,
+    "name": "Diabetes",
+    "description": "Diabetes Management Program"
+  },
+  {
+    "id": 5,
+    "name": "Hypertension",
+    "description": "Hypertension Management Program"
+  },
+  {
+    "id": 6,
+    "name": "Cancer",
+    "description": "Cancer Program"
+  }
+]

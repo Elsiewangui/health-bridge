@@ -7,6 +7,9 @@ import AllClients from './AllClients';
 import ClientProfile from './ClientProfile';
 import EditClient from './EditClient';
 import NavBar from './NavBar'; 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   const location = useLocation();
@@ -26,7 +29,9 @@ function App() {
         <Route path="/clients" element={<AllClients />} />
         <Route path="/client/:id" element={<ClientProfile />} />
         <Route path="/clients/:id/edit" element={<EditClient />} />
+        
       </Routes>
+      <ToastContainer position="top-right" autoClose={3000} closeOnClick />
     </div>
   );
 }

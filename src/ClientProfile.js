@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ClientProfile = () => {
   const { id } = useParams();
@@ -10,7 +9,6 @@ const ClientProfile = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Fetch client data when component is mounted
   useEffect(() => {
     axios
       .get(`http://localhost:5000/clients/${id}`)
@@ -21,20 +19,17 @@ const ClientProfile = () => {
       });
   }, [id]);
 
-  // Handle delete operation
   const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this client?")) {
-      axios
-        .delete(`http://localhost:5000/clients/${id}`)
-        .then(() => {
-          alert("Client deleted successfully");
-          navigate("/clients"); // Redirect to all clients page
-        })
-        .catch((err) => {
-          alert("Error deleting client");
-          console.error(err);
-        });
-    }
+    axios
+      .delete(`http://localhost:5000/clients/${id}`)
+      .then(() => {
+        toast.success("Client deleted successfully");
+        navigate("/");
+      })
+      .catch((err) => {
+        toast.error("Error deleting client");
+        console.error(err);
+      });
   };
 
   if (error) return <p>{error}</p>;
@@ -49,17 +44,13 @@ const ClientProfile = () => {
       <p><strong>Next of Kin:</strong> {client.nextOfKinName} ({client.nextOfKinRelation})</p>
       <p><strong>Next of Kin Phone:</strong> {client.nextOfKinPhone}</p>
       <p><strong>Programs Enrolled:</strong> {client.programs.length > 0 ? client.programs.join(", ") : "None"}</p>
+      
       <div className="client-profile-buttons">
         <Link to={`/clients/${id}/edit`}>
-           <button style={{ marginRight: "10px" }}>Edit Client</button>
+          <button style={{ marginRight: "10px" }}>Edit Client</button>
         </Link>
-        <button
-          onClick={handleDelete}
-          
-        >
-        Delete Client
-      </button>
-    </div>
+        <button onClick={handleDelete}>Delete Client</button>
+      </div>
     </div>
   );
 };

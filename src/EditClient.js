@@ -26,7 +26,7 @@ const EditClient = () => {
       setFormData({ ...client });
     } else {
       toast.error("Client not found");
-      navigate("/");
+      navigate("/home");
     }
   }, [id, clients, navigate]);
 

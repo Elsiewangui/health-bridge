@@ -66,18 +66,5 @@
       "Cancer",
       "TB"
     ]
-  },
-  {
-    "id": 1745573683470,
-    "name": "Elsie Wangui wanjihia",
-    "dob": "2025-04-23",
-    "phone": "0715195681",
-    "country": "Kenya",
-    "nextOfKinName": "Amos Samuel",
-    "nextOfKinRelation": "Brother",
-    "nextOfKinPhone": "0715195681",
-    "programs": [
-      "TB"
-    ]
   }
 ]

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify"; 
 
 function AddProgram() {
   const [programName, setProgramName] = useState("");
@@ -13,17 +14,17 @@ function AddProgram() {
       description: programDescription,
     };
 
-    // Send a POST request to the backend to create the new program
     axios
       .post("http://localhost:5000/programs", newProgram)
       .then((response) => {
         console.log("New Health Program Created:", response.data);
-        // Optionally clear inputs or show a success message
+        toast.success("Program added successfully! "); 
         setProgramName("");
         setProgramDescription("");
       })
       .catch((error) => {
         console.error("Error adding new program:", error);
+        toast.error("Failed to add program. Please try again."); 
       });
   };
 

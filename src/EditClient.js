@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ClientContext } from "./context/ClientContext";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const EditClient = () => {
   const { id } = useParams();
@@ -19,18 +20,16 @@ const EditClient = () => {
     programs: []
   });
 
-  // Load the client details by ID
   useEffect(() => {
-    const client = clients.find(client => client.id === Number(id));
+    const client = clients.find((client) => client.id === Number(id));
     if (client) {
       setFormData({ ...client });
     } else {
-      alert("Client not found");
+      toast.error("Client not found");
       navigate("/");
     }
   }, [id, clients, navigate]);
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,20 +37,18 @@ const EditClient = () => {
       .put(`http://localhost:5000/clients/${id}`, formData)
       .then((response) => {
         console.log("Client updated:", response.data);
-        alert("Client updated successfully");
-        navigate(`/clients`); // Redirect to updated profile
+        toast.success("Client updated successfully");
+        navigate("/clients");
       })
       .catch((error) => {
         console.error("Error updating client:", error);
-        alert("Error updating client");
+        toast.error("Error updating client");
       });
   };
 
-  // Input change handler with phone length check
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Limit phone fields to 10 digits and numbers only
     if ((name === "phone" || name === "nextOfKinPhone") && !/^\d{0,10}$/.test(value)) {
       return;
     }
@@ -122,9 +119,7 @@ const EditClient = () => {
           maxLength="10"
         />
 
-        <button type="submit">
-          Save Changes
-        </button>
+        <button type="submit">Save Changes</button>
       </form>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { ClientContext } from "./context/ClientContext";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
+
 const AllClients = () => {
   const { clients } = useContext(ClientContext);
   const [searchTerm, setSearchTerm] = useState("");

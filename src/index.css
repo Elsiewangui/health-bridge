@@ -412,3 +412,62 @@
 .edit-client-form button:hover {
   background-color: #1e8449;
 }
+/*login.css*/
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.login-container button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #1f6391;
+}
+.logout-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font: inherit;
+}
+

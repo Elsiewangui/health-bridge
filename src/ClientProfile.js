@@ -24,7 +24,7 @@ const ClientProfile = () => {
       .delete(`http://localhost:5000/clients/${id}`)
       .then(() => {
         toast.success("Client deleted successfully");
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => {
         toast.error("Error deleting client");
